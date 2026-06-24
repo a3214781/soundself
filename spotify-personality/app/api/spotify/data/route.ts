@@ -12,10 +12,10 @@ export async function GET(request: NextRequest) {
   const timeRange = request.nextUrl.searchParams.get("time_range") || "medium_term";
 
   const [artistsRes, tracksRes, recentRes] = await Promise.all([
-    fetch(`https://api.spotify.com/v1/me/top/artists?limit=10&time_range=${timeRange}`, {
+    fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=${timeRange}`, {
       headers: { Authorization: `Bearer ${token.value}` },
     }),
-    fetch(`https://api.spotify.com/v1/me/top/tracks?limit=10&time_range=${timeRange}`, {
+    fetch(`https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=${timeRange}`, {
       headers: { Authorization: `Bearer ${token.value}` },
     }),
     fetch("https://api.spotify.com/v1/me/player/recently-played?limit=10", {

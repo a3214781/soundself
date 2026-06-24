@@ -2,7 +2,7 @@
 
 **AI-powered Spotify personality analyzer.** Connects to your Spotify account, runs K-Means clustering on your listening history, and uses Claude to generate a personalised music personality profile.
 
-![SoundSelf Dashboard](./screenshot.png)
+![SoundSelf Dashboard](./spotify-personality/screenshot.png)
 
 ---
 

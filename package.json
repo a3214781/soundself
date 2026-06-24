@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.105.0",
     "next-auth": "^4.24.14"
   }
 }

@@ -26,21 +26,16 @@ export async function GET() {
 
   const message = await client.messages.create({
     model: "claude-haiku-4-5",
-    max_tokens: 1000,
+    max_tokens: 500,
     messages: [
-      {
-        role: "user",
-        content: `Based on this person's Spotify listening data grouped into 3 clusters, generate a music personality profile. Be creative, specific, and fun. Give them an archetype name and describe their listening personality in 2-3 paragraphs.
+  {
+    role: "user",
+    content: `Generate a music personality profile from this Spotify cluster data. Return ONLY valid JSON, no markdown.
 
-Cluster data:
 ${clusterSummary}
 
-Format your response as JSON with these fields:
-- archetype: a creative 2-3 word name for their music personality
-- description: 2-3 paragraphs about their listening personality
-- clusters: array of 3 objects each with a "mood" (1-3 word label) and "vibe" (one sentence description)
-
-Return only valid JSON, no markdown.`
+JSON format:
+{"archetype":"2-3 word name","description":"2-3 paragraphs","clusters":[{"mood":"1-3 words","vibe":"one sentence"},{"mood":"...","vibe":"..."},{"mood":"...","vibe":"..."}]}`
       }
     ]
   });

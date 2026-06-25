@@ -105,7 +105,7 @@ python3 app.py
 
 Terminal 2 — Next.js:
 ```bash
-cd spotify-personality
+cd ~/soundself/spotify-personality
 npx next dev --hostname 127.0.0.1 --port 3000
 ```
 
